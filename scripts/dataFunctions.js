@@ -13,6 +13,7 @@ export const retrieveSearchResults = async (searchTerm) =>{
 const getWikiSearchString = (searchTerm) => {
     const maxCharacter = getMaxCharacter();
     const rawSearchString =  `https://en.wikipedia.org/w/api.php?action=query&generator=search&gsrsearch=${searchTerm}&gsrlimit=20&prop=pageimages|extracts&exchars=${maxCharacter}&exintro&explaintext&exlimit=max&format=json&origin=*`;
+    const serachString = encodeURI(rawSearchString);
 }
 
 const getMaxCharacter =() =>{
