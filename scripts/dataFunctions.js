@@ -8,6 +8,11 @@ export const getSearchTerm = () => {
 export const retrieveSearchResults = async (searchTerm) => {
     const wikiSearchString = getWikiSearchString(searchTerm);
     const wikiSearchResults = await requestData(wikiSearchString);
+    let resultArray = [];
+    if (wikiSearchResults.hasOwnProperty("query")) {
+        resultArray = processWikiResults(wikiSearchResults.query.pages)
+    }
+    return resultArray;
 
 }
 
@@ -32,5 +37,7 @@ const requestData = async (searchString) => {
         const response = await fetch(serachString);
         const data = await response.json();
         return data;
+    } catch (err) {
+        console.error(err);
     }
 }
