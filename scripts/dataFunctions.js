@@ -34,7 +34,7 @@ const getMaxCharacter = () => {
 
 const requestData = async (searchString) => {
     try {
-        const response = await fetch(serachString);
+        const response = await fetch(searchString);
         const data = await response.json();
         return data;
     } catch (err) {

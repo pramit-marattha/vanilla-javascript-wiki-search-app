@@ -67,6 +67,6 @@ export const deleteSearchResults = () => {
     if (numberOfResults) {
       statLine.textContent = `Displaying ${numberOfResults} results.`;
     } else {
-      statLine.textContent = "Error!!";
+      statLine.textContent = "Error!! showing results";
     }
   };
